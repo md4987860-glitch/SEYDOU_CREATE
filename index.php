@@ -1,0 +1,29 @@
+<?php date_default_timezone_set('Africa/Dakar');?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mon Premier Site</title>
+<style>
+body { font-family: Arial;text-align:center;background:#f0f0f0;margin-top:100px;}
+.box{backgroung:white;padding:40px;border-radius:15px;display:inline-block;box-shadow: 0 0 10px gray;}
+h1{color:#2c3e50;}
+</style>
+
+</head>
+
+<body>
+    
+<div class="box">
+<h1>Bienvenu sur mon site!</h1>
+
+<p>Salut,c'est moi seydou et c'est mon premier site PHP</p>
+<P><B>Aujourd'huion est le:<?php echo date("d/m//y");?></b></p>
+<p>Il est:<?php echo date("H:i:s");?></p>
+<div/>
+</body/>
+
+
+
+
+</html>
