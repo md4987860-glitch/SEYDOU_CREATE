@@ -1,29 +1,61 @@
-<?php date_default_timezone_set('Africa/Dakar');?>
-
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-<title>Mon Premier Site</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon Premier Site - Seydou</title>
 <style>
-body { font-family: Arial;text-align:center;background:#f0f0f0;margin-top:100px;}
-.box{backgroung:white;padding:40px;border-radius:15px;display:inline-block;box-shadow: 0 0 10px gray;}
-h1{color:#2c3e50;}
+  body { 
+    font-family: 'Segoe UI', Arial, sans-serif;
+    text-align:center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .box{
+    background:white;
+    padding:50px 40px;
+    border-radius:20px;
+    display:inline-block;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    max-width:500px;
+  }
+  h1{color:#2c3e50; margin-top:0; font-size:28px;}
+  p{color:#555; font-size:18px; line-height:1.6;}
+  .date-box{
+    background:#f8f9fa;
+    padding:15px;
+    border-radius:10px;
+    margin-top:20px;
+  }
+  b{color:#667eea;}
 </style>
-
 </head>
-
 <body>
-    
+
 <div class="box">
-<h1>Bienvenu sur mon site!</h1>
+  <h1>Bienvenue sur mon site ! 👋</h1>
+  <p>Salut, c'est moi Seydou et c'est mon premier site web !</p>
+  
+  <div class="date-box">
+    <p><b>Aujourd'hui on est le : <span id="date"></span></b></p>
+    <p>Il est : <span id="heure"></span> (Dakar)</p>
+  </div>
+</div>
 
-<p>Salut,c'est moi seydou et c'est mon premier site PHP</p>
-<P><B>Aujourd'huion est le:<?php echo date("d/m//y");?></b></p>
-<p>Il est:<?php echo date("H:i:s");?></p>
-<div/>
-</body/>
+<script>
+  function updateHeure() {
+    const options = { timeZone: 'Africa/Dakar' };
+    const maintenant = new Date();
+    document.getElementById('date').innerText = maintenant.toLocaleDateString('fr-FR', { ...options });
+    document.getElementById('heure').innerText = maintenant.toLocaleTimeString('fr-FR', { ...options });
+  }
+  updateHeure();
+  setInterval(updateHeure, 1000);
+</script>
 
-
-
-
+</body>
 </html>
